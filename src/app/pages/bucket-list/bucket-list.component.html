@@ -1,1 +1,53 @@
-<p>bucket-list works!</p>
+<div class="container mt-4">
+  <h2 class="mt-4">Bucket List</h2>
+
+    <div *ngIf="showForm" class="card p-3 mb-3">
+        <h4>Create New Bucket</h4>
+        <div class="row">
+          <div class="col-md-6">
+            <label class="form-label">Bucket Name*</label>
+            <input type="text" class="form-control" [(ngModel)]="newBucket.name" placeholder="Enter bucket name" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Bucket Location*</label>
+            <select class="form-select" [(ngModel)]="newBucket.location" required>
+                <option *ngFor="let location of locations" [value]="location.name">
+                  {{ location.name }}
+                </option>
+              </select>
+          </div>
+        </div>
+        <button class="col-md-3 btn btn-primary mt-3" (click)="createBucket()">
+          <i class="bi bi-check-circle"></i> Create Bucket
+        </button>
+    </div>
+
+    <div class="card p-3 mb-3">
+        <div class="row">
+            <div class="col-md-6">
+                <p>All Buckets ({{ buckets.length }})</p>
+            </div>
+            <div *ngIf="CreateNewButon" class="col-md-6 d-flex justify-content-end mb-3">
+                <button class="btn btn-primary" (click)="toggleForm()">
+                  <i class="bi bi-plus-circle"></i> Create New Bucket
+                </button>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead class="table-secondary">
+            <tr>
+                <th>Name</th>
+                <th>Location</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let bucket of buckets" (click)="openBucket(bucket)" class="table-hover" style="cursor: pointer;">
+                <td>
+                <i class="bi bi-folder"></i> {{ bucket.name }}
+                </td>
+                <td>{{ bucket.location }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

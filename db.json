@@ -1,0 +1,67 @@
+{
+  "buckets": [
+    {
+      "id": "387c",
+      "name": "BestStorage",
+      "location": "Kranj",
+      "files": [
+        {
+          "name": "FileName01",
+          "lastmodified": "06.09.2015",
+          "size": "2"
+        },
+        {
+          "name": "FileName02",
+          "lastmodified": "05.01.2015",
+          "size": "0.1"
+        },
+        {
+          "name": "FileName03",
+          "lastmodified": "12.11.2016",
+          "size": "2"
+        }
+      ]
+    },
+    {
+      "id": "bab7",
+      "name": "Pics",
+      "location": "Ljubljana"
+    },
+    {
+      "id": "9401",
+      "name": "1",
+      "location": "Murska Sobota"
+    },
+    {
+      "id": "8b0c",
+      "name": "2",
+      "location": "Maribor"
+    }
+  ],
+  "locations": [
+    {
+      "id": "1",
+      "name": "Murska Sobota"
+    },
+    {
+      "id": "2",
+      "name": "Maribor"
+    },
+    {
+      "id": "3",
+      "name": "Celje"
+    },
+    {
+      "id": "4",
+      "name": "Ljubljana"
+    },
+    {
+      "id": "5",
+      "name": "Kranj"
+    },
+    {
+      "id": "6",
+      "name": "Koper"
+    }
+  ]
+}
