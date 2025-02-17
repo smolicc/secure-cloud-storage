@@ -1,0 +1,31 @@
+{
+    "buckets": [
+    {
+      "id": "387c",
+      "name": "BestStorage",
+      "location": "Kranj",
+      "files":[
+        {
+            "name": "FileName01",
+            "lastmodified": "06.09.2015",
+            "size": "2"
+        },
+        {
+            "name": "FileName02",
+            "lastmodified": "05.01.2015",
+            "size": "0.1"
+        },
+        {
+            "name": "FileName03",
+            "lastmodified": "12.11.2016",
+            "size": "2"
+        }
+      ]
+    },
+    {
+      "id": "bab7",
+      "name": "Pics",
+      "location": "Ljubljana"
+    }
+  ]
+}
