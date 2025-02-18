@@ -16,7 +16,7 @@ export class BucketListComponent implements OnInit {
   showForm: boolean = false;
   CreateNewButon: boolean = true;
   locations: { id: string; name: string }[] = [];
-  newBucket = { name: '', location: '' }; 
+  newBucket = { name: '', location: '', files:[] }; 
 
   constructor(private router: Router, private bucketService: BucketServiceService) {}
 
@@ -50,8 +50,8 @@ export class BucketListComponent implements OnInit {
     if (!this.newBucket.name.trim()) return;
 
     this.bucketService.pushBucket(this.newBucket).subscribe(() => {
-      this.loadBuckets();
-      this.newBucket = { name: '', location: '' }; 
+      this.loadBuckets(); 
+      this.newBucket = { name: '', location: '', files:[] };
       this.showForm = false;
       this.CreateNewButon = true;
     });

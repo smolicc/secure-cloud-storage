@@ -5,5 +5,5 @@ import { BucketDetailsComponent } from './pages/bucket-details/bucket-details.co
 export const routes: Routes = [
   { path: '', component: BucketListComponent },
   { path: 'bucket/:id', component: BucketDetailsComponent },
-  //{ path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' }
 ];

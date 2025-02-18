@@ -25,17 +25,20 @@
     {
       "id": "bab7",
       "name": "Pics",
-      "location": "Ljubljana"
+      "location": "Ljubljana",
+      "files": []
     },
     {
       "id": "9401",
       "name": "1",
-      "location": "Murska Sobota"
+      "location": "Murska Sobota",
+      "files": []
     },
     {
       "id": "8b0c",
       "name": "2",
-      "location": "Maribor"
+      "location": "Maribor",
+      "files": []
     }
   ],
   "locations": [
