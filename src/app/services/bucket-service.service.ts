@@ -50,4 +50,8 @@ export class BucketServiceService {
       })
     );
   }
+
+  deleteBucket(bucketId: string): Observable<any> {
+    return this.http.delete(`${this.urlBucket}/${bucketId}`);
+  }
 }

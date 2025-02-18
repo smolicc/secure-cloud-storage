@@ -15,6 +15,8 @@ export class BucketDetailsComponent implements OnInit{
   selectedBucket: any = null;
   files: any[] = [];
   selectedFileName: string = '';
+  activeTab: string = 'files';
+  storageSize: string = '';
 
   @ViewChild('fileInput') fileInput!: ElementRef;
   
@@ -31,12 +33,21 @@ export class BucketDetailsComponent implements OnInit{
     this.loadFiles();
   }
 
+  setActiveTab(tab: string): void {
+    this.activeTab = tab;
+  }
+
   loadFiles(): void {
     if (this.bucketID) {
         this.bucketService.getFilesById(this.bucketID).subscribe(data => {
         this.selectedBucket = data;
         this.files = this.selectedBucket.files;
-        });
+        
+        const totalSize: number = this.selectedBucket.files.reduce((sum: number, file: { size: string }) => 
+          sum + parseFloat(file.size), 0
+        );
+        this.storageSize = totalSize.toString();
+      });
     }
   }
 
@@ -50,7 +61,7 @@ export class BucketDetailsComponent implements OnInit{
       const newFile = {
         name: file.name,
         lastmodified: new Date(file.lastModified).toLocaleDateString(),
-        size: (file.size / 1024).toFixed(2)
+        size: (file.size / (1024*1024)).toFixed(2)
       };
 
       if (this.bucketID) {
@@ -74,6 +85,16 @@ export class BucketDetailsComponent implements OnInit{
         this.loadFiles();
         this.selectedFileName = '';
       })
+    }
+  }
+
+  onBucketDelete(): void {
+    if (this.bucketID){
+      if (window.confirm(`Are you sure you want to delete "${this.bucketName}"?`)) {
+        this.bucketService.deleteBucket(this.bucketID).subscribe(() => {
+          this.router.navigate(['/']);
+        });
+      }
     }
   }
 }

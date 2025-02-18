@@ -8,17 +8,22 @@
         {
           "name": "FileName01",
           "lastmodified": "06.09.2015",
-          "size": "2"
+          "size": 2
         },
         {
           "name": "FileName02",
           "lastmodified": "05.01.2015",
-          "size": "0.1"
+          "size": 0.1
         },
         {
           "name": "FileName03",
           "lastmodified": "12.11.2016",
-          "size": "2"
+          "size": 2
+        },
+        {
+          "name": "20250127_144250.jpg",
+          "lastmodified": "27/01/2025",
+          "size": "3.32"
         }
       ]
     },
@@ -32,13 +37,28 @@
       "id": "9401",
       "name": "1",
       "location": "Murska Sobota",
-      "files": []
-    },
-    {
-      "id": "8b0c",
-      "name": "2",
-      "location": "Maribor",
-      "files": []
+      "files": [
+        {
+          "name": "20250127_144250.jpg",
+          "lastmodified": "27/01/2025",
+          "size": "3.32"
+        },
+        {
+          "name": "20250127_144250.jpg",
+          "lastmodified": "27/01/2025",
+          "size": "3.32"
+        },
+        {
+          "name": "20250127_144250.jpg",
+          "lastmodified": "27/01/2025",
+          "size": "3.32"
+        },
+        {
+          "name": "20250127_144250.jpg",
+          "lastmodified": "27/01/2025",
+          "size": "3.32"
+        }
+      ]
     }
   ],
   "locations": [
