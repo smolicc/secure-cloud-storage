@@ -6,59 +6,42 @@
       "location": "Kranj",
       "files": [
         {
+          "id": 1,
           "name": "FileName01",
           "lastmodified": "06.09.2015",
-          "size": 2
+          "size": "2"
         },
         {
+          "id": 2,
           "name": "FileName02",
           "lastmodified": "05.01.2015",
-          "size": 0.1
+          "size": "0.1"
         },
         {
+          "id": 3,
           "name": "FileName03",
           "lastmodified": "12.11.2016",
-          "size": 2
+          "size": "2"
         },
         {
-          "name": "20250127_144250.jpg",
-          "lastmodified": "27/01/2025",
-          "size": "3.32"
+          "id": 4,
+          "name": "20250127_133050.jpg",
+          "lastmodified": "01/02/2025",
+          "size": "1.68"
+        },
+        {
+          "id": 5,
+          "name": "20250127_133432.jpg",
+          "lastmodified": "01/02/2025",
+          "size": "1.28"
         }
       ]
     },
     {
-      "id": "bab7",
-      "name": "Pics",
-      "location": "Ljubljana",
-      "files": []
-    },
-    {
-      "id": "9401",
+      "id": "0cd4",
       "name": "1",
-      "location": "Murska Sobota",
-      "files": [
-        {
-          "name": "20250127_144250.jpg",
-          "lastmodified": "27/01/2025",
-          "size": "3.32"
-        },
-        {
-          "name": "20250127_144250.jpg",
-          "lastmodified": "27/01/2025",
-          "size": "3.32"
-        },
-        {
-          "name": "20250127_144250.jpg",
-          "lastmodified": "27/01/2025",
-          "size": "3.32"
-        },
-        {
-          "name": "20250127_144250.jpg",
-          "lastmodified": "27/01/2025",
-          "size": "3.32"
-        }
-      ]
+      "location": "Maribor",
+      "files": []
     }
   ],
   "locations": [

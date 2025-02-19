@@ -22,7 +22,6 @@ export class BucketListComponent implements OnInit {
 
   ngOnInit() {
     this.loadBuckets();
-    this.loadLocations();
   }
 
   loadBuckets() {
@@ -41,6 +40,7 @@ export class BucketListComponent implements OnInit {
   }
 
   toggleForm() {
+    this.loadLocations();
     this.showForm = !this.showForm;
     this.CreateNewButon = false;
   }
@@ -50,7 +50,7 @@ export class BucketListComponent implements OnInit {
     if (!this.newBucket.name.trim()) return;
 
     this.bucketService.pushBucket(this.newBucket).subscribe(() => {
-      this.loadBuckets(); 
+      this.buckets.push(this.newBucket); 
       this.newBucket = { name: '', location: '', files:[] };
       this.showForm = false;
       this.CreateNewButon = true;

@@ -14,7 +14,7 @@ export class BucketDetailsComponent implements OnInit{
   bucketName: string = '';
   selectedBucket: any = null;
   files: any[] = [];
-  selectedFileName: string = '';
+  selectedFile: any = null;
   activeTab: string = 'files';
   storageSize: string = '';
 
@@ -35,6 +35,8 @@ export class BucketDetailsComponent implements OnInit{
 
   setActiveTab(tab: string): void {
     this.activeTab = tab;
+
+    this.updateStorageSize();
   }
 
   loadFiles(): void {
@@ -42,13 +44,15 @@ export class BucketDetailsComponent implements OnInit{
         this.bucketService.getFilesById(this.bucketID).subscribe(data => {
         this.selectedBucket = data;
         this.files = this.selectedBucket.files;
-        
-        const totalSize: number = this.selectedBucket.files.reduce((sum: number, file: { size: string }) => 
-          sum + parseFloat(file.size), 0
-        );
-        this.storageSize = totalSize.toString();
       });
     }
+  }
+
+  updateStorageSize(): void {
+    const totalSize: number = this.files.reduce((sum: number, file: { size: string }) => 
+      sum + parseFloat(file.size), 0
+    );
+    this.storageSize = totalSize.toString();
   }
 
   openFileDialog(): void {
@@ -59,6 +63,7 @@ export class BucketDetailsComponent implements OnInit{
     const file: File = event.target.files[0];
     if (file) {
       const newFile = {
+        id: this.files.length + 1,
         name: file.name,
         lastmodified: new Date(file.lastModified).toLocaleDateString(),
         size: (file.size / (1024*1024)).toFixed(2)
@@ -66,24 +71,24 @@ export class BucketDetailsComponent implements OnInit{
 
       if (this.bucketID) {
         this.bucketService.pushFile(this.bucketID, newFile).subscribe(() => {
-        this.loadFiles();
+          this.files.push(newFile);
         });
       }
     }
   }
 
   selectedFileOnClick(file: any){
-    this.selectedFileName = file.name;
+    this.selectedFile = file;
   }
 
   deleteFile(){
-    if (this.bucketID && this.selectedFileName) {
-      const confirmDelete = window.confirm(`Are you sure you want to delete "${this.selectedFileName}"?`);
+    if (this.bucketID && this.selectedFile) {
+      const confirmDelete = window.confirm(`Are you sure you want to delete "${this.selectedFile.name}"?`);
       if (!confirmDelete) return;
 
-      this.bucketService.deleteFile(this.bucketID, this.selectedFileName).subscribe(() => {
-        this.loadFiles();
-        this.selectedFileName = '';
+      this.bucketService.deleteFile(this.bucketID, this.selectedFile.id).subscribe(() => {
+        this.files = this.files.filter(file => file.id !==this.selectedFile.id);
+        this.selectedFile = null;
       })
     }
   }

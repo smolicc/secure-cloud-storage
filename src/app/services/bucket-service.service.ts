@@ -42,10 +42,10 @@ export class BucketServiceService {
     );
   }
 
-  deleteFile(bucketId: string, fileName: string): Observable<any> {
+  deleteFile(bucketId: string, fileId: string): Observable<any> {
     return this.getBucketById(bucketId).pipe(
       map(bucket => {
-        const updatedFiles = bucket.files.filter((file: any) => file.name !== fileName);
+        const updatedFiles = bucket.files.filter((file: any) => file.id !== fileId);
         return this.http.patch(`${this.urlBucket}/${bucketId}`, { files: updatedFiles }).subscribe();
       })
     );
