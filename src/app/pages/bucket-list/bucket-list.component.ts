@@ -3,6 +3,9 @@ import { NgFor, NgIf, CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BucketServiceService } from '../../services/bucket-service.service';
+import { v4 as uuidv4 } from 'uuid';
+import { Bucket } from '../../models/bucket.model';
+import { Location } from '../../models/location.model';
 
 @Component({
   selector: 'app-bucket-list',
@@ -12,16 +15,17 @@ import { BucketServiceService } from '../../services/bucket-service.service';
   styleUrl: './bucket-list.component.css'
 })
 export class BucketListComponent implements OnInit {
-  buckets: any[] = [];
+  buckets: Bucket[] = [];
   showForm: boolean = false;
-  CreateNewButon: boolean = true;
-  locations: { id: string; name: string }[] = [];
-  newBucket = { name: '', location: '', files:[] }; 
+  CreateNewBucketBTN: boolean = true;
+  locations: Location[] = [];
+  newBucket: Bucket  = { id: '', name: '', location: '', files: [] };
 
   constructor(private router: Router, private bucketService: BucketServiceService) {}
 
   ngOnInit() {
     this.loadBuckets();
+    this.loadLocations();
   }
 
   loadBuckets() {
@@ -40,21 +44,25 @@ export class BucketListComponent implements OnInit {
   }
 
   toggleForm() {
-    this.loadLocations();
     this.showForm = !this.showForm;
-    this.CreateNewButon = false;
+    this.CreateNewBucketBTN = false;
   }
 
   createBucket() {
     
-    if (!this.newBucket.name.trim()) return;
+    if(this.newBucket)
+    {
+      if (!this.newBucket.name.trim()) return;
 
-    this.bucketService.pushBucket(this.newBucket).subscribe(() => {
-      this.buckets.push(this.newBucket); 
-      this.newBucket = { name: '', location: '', files:[] };
-      this.showForm = false;
-      this.CreateNewButon = true;
-    });
+      this.newBucket.id = uuidv4();
+  
+      this.bucketService.pushBucket(this.newBucket).subscribe(() => {
+        this.buckets.push(this.newBucket); 
+        this.newBucket = { id: '', name: '', location: this.locations[0].name, files:[] };
+        this.showForm = false;
+        this.CreateNewBucketBTN = true;
+      });
+    }
   }
 
   openBucket(bucket: any) {

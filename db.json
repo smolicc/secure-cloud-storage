@@ -1,46 +1,40 @@
 {
   "buckets": [
     {
-      "id": "387c",
-      "name": "BestStorage",
-      "location": "Kranj",
+      "id": "a045ec36-142d-484b-bbd2-c7a6f14e1297",
+      "name": "1",
+      "location": "Murska Sobota",
       "files": [
         {
-          "id": 1,
-          "name": "FileName01",
-          "lastmodified": "06.09.2015",
-          "size": "2"
-        },
-        {
-          "id": 2,
-          "name": "FileName02",
-          "lastmodified": "05.01.2015",
-          "size": "0.1"
-        },
-        {
-          "id": 3,
-          "name": "FileName03",
-          "lastmodified": "12.11.2016",
-          "size": "2"
-        },
-        {
-          "id": 4,
+          "id": "ad2a6794-ff94-4938-95b2-16dc3c2283b3",
           "name": "20250127_133050.jpg",
-          "lastmodified": "01/02/2025",
-          "size": "1.68"
+          "lastmodified": "01. 02. 2025",
+          "size": 1763975
         },
         {
-          "id": 5,
-          "name": "20250127_133432.jpg",
-          "lastmodified": "01/02/2025",
-          "size": "1.28"
+          "id": "1287bea0-0533-499a-a329-2ec8f3eaa58a",
+          "name": "20250127_133835.jpg",
+          "lastmodified": "01. 02. 2025",
+          "size": 1373237
         }
       ]
     },
     {
-      "id": "0cd4",
-      "name": "1",
-      "location": "Maribor",
+      "id": "d9a16449-75a1-43f9-a544-8abc0e559f5f",
+      "name": "2",
+      "location": "Ljubljana",
+      "files": []
+    },
+    {
+      "id": "e906ba3d-3a06-47a6-bcee-46013e7f3270",
+      "name": "3",
+      "location": "Murska Sobota",
+      "files": []
+    },
+    {
+      "id": "661ebf07-bc86-427a-902c-17cff6277240",
+      "name": "4",
+      "location": "Murska Sobota",
       "files": []
     }
   ],

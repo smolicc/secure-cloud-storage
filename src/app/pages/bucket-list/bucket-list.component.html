@@ -24,14 +24,12 @@
 
     <div class="card p-3 mb-3">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 mt-1">
                 <p>All Buckets ({{ buckets.length }})</p>
             </div>
-            <div *ngIf="CreateNewButon" class="col-md-6 d-flex justify-content-end mb-3">
-                <button class="btn btn-primary" (click)="toggleForm()">
-                  <i class="bi bi-plus-circle"></i> Create New Bucket
-                </button>
-            </div>
+            <button *ngIf="CreateNewBucketBTN" class="btn btn-primary col-md-6 mb-3" (click)="toggleForm()">
+              <i class="bi bi-plus-circle"></i> Create New Bucket
+            </button>
         </div>
         <table class="table table-striped">
             <thead class="table-secondary">
@@ -41,7 +39,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let bucket of buckets" (click)="openBucket(bucket)" class="table-hover" style="cursor: pointer;">
+            <tr *ngFor="let bucket of buckets" (click)="openBucket(bucket)" style="cursor: pointer;">
                 <td>
                 <i class="bi bi-folder"></i> {{ bucket.name }}
                 </td>
