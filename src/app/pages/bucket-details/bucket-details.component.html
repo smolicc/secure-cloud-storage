@@ -11,42 +11,36 @@
     </ul>
 
     <div class="card p-3 mb-3">
-
       <div *ngIf="activeTab === 'files'">
-        <div class="row">
-            <div class="col-md-6 mt-2">
-                <p>All Files ({{ files.length }})</p>
-            </div>
-            <div class="col-md-6 d-flex justify-content-end mb-3">
-              <button class="btn btn-light me-3"  (click)="deleteFile()" [disabled]="!selectedFile">
-                <i class="bi bi-trash"></i> Delete Object
-              </button>
-              <button class="btn btn-light" (click)="openFileDialog()">
-                <input type="file" #fileInput style="display: none" (change)="onFileSelected($event)">
-                <i class="bi bi-upload"></i> Upload Object
-              </button>
-            </div>
+        <div>
+          <button class="btn btn-light mb-3 float-end" (click)="openFileDialog()">
+            <input type="file" #fileInput style="display: none" (change)="onFileSelected($event)">
+            <i class="bi bi-upload"></i> Upload Object
+          </button>
+          <button class="btn btn-light me-3 float-end"  (click)="deleteFile()" [disabled]="!selectedFile">
+            <i class="bi bi-trash"></i> Delete Object
+          </button>
+          <p class="mt-1">All Files ({{ files.length }})</p>
         </div>
-        <table class="table table-striped">
-            <thead class="table-secondary">
-            <tr>
-                <th>Name</th>
-                <th>Last modified</th>
-                <th>Size</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let file of files" (click)="selectedFileOnClick(file)" style="cursor: pointer;" [ngClass]="{'table-primary': file === selectedFile}">
-                <td>
-                <i class="bi bi-file-earmark-text"></i> {{ file.name }}
-                </td>
-                <td>{{ file.lastmodified }}</td>
-                <td>{{ formatFileSize(file.size) }}</td>
-            </tr>
-            </tbody>
-        </table>
+          <table class="table table-striped">
+              <thead class="table-secondary">
+              <tr>
+                  <th>Name</th>
+                  <th>Last modified</th>
+                  <th>Size</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let file of files" (click)="selectedFileOnClick(file)" style="cursor: pointer;" [ngClass]="{'table-primary': file === selectedFile}">
+                  <td>
+                  <i class="bi bi-file-earmark-text"></i> {{ file.name }}
+                  </td>
+                  <td>{{ file.lastmodified }}</td>
+                  <td>{{ formatFileSize(file.size) }}</td>
+              </tr>
+              </tbody>
+          </table>
       </div>
-
     <div *ngIf="activeTab === 'details'">
       <button class="btn btn-danger float-end" (click)="onBucketDelete()">Delete Bucket</button>
       <p><strong>Bucket name:</strong> {{ selectedBucket?.name }}</p>

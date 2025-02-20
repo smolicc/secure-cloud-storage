@@ -21,16 +21,13 @@
           <i class="bi bi-check-circle"></i> Create Bucket
         </button>
     </div>
-
     <div class="card p-3 mb-3">
-        <div class="row">
-            <div class="col-md-6 mt-1">
-                <p>All Buckets ({{ buckets.length }})</p>
-            </div>
-            <button *ngIf="CreateNewBucketBTN" class="btn btn-primary col-md-6 mb-3" (click)="toggleForm()">
-              <i class="bi bi-plus-circle"></i> Create New Bucket
-            </button>
-        </div>
+      <div>
+        <button *ngIf="CreateNewBucketBTN" class="btn btn-primary float-end mb-3" (click)="toggleForm()">
+          <i class="bi bi-plus-circle"></i> Create New Bucket
+        </button>
+        <p class="mt-2">All Buckets ({{ buckets.length }})</p>
+      </div>
         <table class="table table-striped">
             <thead class="table-secondary">
             <tr>

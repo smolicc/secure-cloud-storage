@@ -36,6 +36,25 @@
       "name": "4",
       "location": "Murska Sobota",
       "files": []
+    },
+    {
+      "id": "d85cc4d1-afdd-4492-b96e-3364de44e293",
+      "name": "77",
+      "location": "Murska Sobota",
+      "files": [
+        {
+          "id": "806b21eb-d67b-4043-9364-719e75e6c386",
+          "name": "20250127_133050.jpg",
+          "lastmodified": "01. 02. 2025",
+          "size": 1763975
+        },
+        {
+          "id": "ae45265a-fa08-47ca-9368-ed45aa529cbc",
+          "name": "20250127_133050.jpg",
+          "lastmodified": "01. 02. 2025",
+          "size": 1763975
+        }
+      ]
     }
   ],
   "locations": [
