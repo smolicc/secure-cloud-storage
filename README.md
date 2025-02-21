@@ -1,7 +1,7 @@
 # SecureCloudStorage
 
 ## Description
-Solution...
+The solution allows the user to create buckets in which files can be stored.
 
 ## Running the solution
 
@@ -50,3 +50,6 @@ Solution...
 ```
 
 ## Notes
+- Minimal validation and basic popups used in the solution
+- Angular version - 19.1.7
+- Bootstrap version - 5.3.3
